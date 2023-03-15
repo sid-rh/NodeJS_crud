@@ -1,0 +1,36 @@
+<%- include('Layout/navbar') %>
+<style>
+    input{
+        margin: 5px;
+    }
+    .addForm
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+</style>
+<div class="container">
+    <h2>Edit data</h2>
+    <div class="row">
+        <div class="addForm">
+            <form action="/edit/<%= data._id %>?_method=put"  method="POST" enctype="multipart/form-data">
+                <input type="text" name="title" placeholder="Enter title" value="<%= data.title %>" required />
+
+                <input type="text" name="description" placeholder="Enter description" value="<%= data.description %>" required />
+            
+                <label for="image">Select Image:</label>
+                <input type="file" name="image" placeholder="Enter image url"  />
+                <img src="/<%= data.image %>" width="100" class="img-thumbnail mt-1">
+
+                <input type="hidden" name="old_image" value="<%= data.image %>" />
+
+                <input type="submit" value="update">
+                
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+<%- include('Layout/footer') %>
