@@ -20,7 +20,7 @@
                                         <tr>
                                             <td><%= row.title %></td>
                                             <td><%= row.description %></td>
-                                            <td><img src="<%= row.image %>" alt="" style="width:50%; height:20%"></td>
+                                            <td><img src="<%= row.image %>" alt="" style="width:25%"></td>
                                             <td>
                                                 <a href="/edit/<%= row._id %>">edit</a>
                                                 <form action="/delete/<%= row._id %>?_method=delete" method="post">

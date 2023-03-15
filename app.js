@@ -5,6 +5,7 @@ const appRoutes = require('./routes/appRoute');
 const bodyParser=require('body-parser');
 const ejs=require('ejs');
 const methodOverride=require('method-override');
+const path=require('path');
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 app.set('view engine','ejs');
+app.use(express.static(path.join(__dirname,'public')));
 
 app.use(express.static('uploads'));
 

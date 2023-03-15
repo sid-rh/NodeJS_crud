@@ -1,23 +1,59 @@
 <%- include('Layout/navbar') %>
 <style>
+    img
+    {
+        width: 300px;
+        
+    }
     input{
         margin: 5px;
     }
-    .addForm
+    .viewForm
     {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
+        gap: 10px;
+    }
+    .viewContainer
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        
+    }
+    .buttons
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    p
+    {
+        text-align: center;
     }
 </style>
-<div class="container">
+<div class="viewContainer">
     <h2><%= data.title %></h2>
     <div>
-        <div class="addForm">
+        <div class="viewForm">
             
                 <img src="/<%= data.image %>" >
                 
                 <p><%= data.description %></p>
+
+                <div class="buttons">
+                    <form action="/edit/<%= data._id %>" method="get">
+                        <button>Update</button>
+                    </form>
+                    <form action="/delete/<%= data._id %>?_method=delete" method="post">
+                        <button>Delete</button>
+                    </form>
+                </div>
                 
         </div>
     </div>

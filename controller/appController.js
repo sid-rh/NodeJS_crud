@@ -126,7 +126,7 @@ const deleteData=(req,res)=>
     Data.findByIdAndRemove(id)
         .then(result=>
             {
-                if(result.image!=''||result.image!=undefined)
+                if(result.image!='')
                 {
                     try {
                         fs.unlinkSync('./uploads/'+result.image);

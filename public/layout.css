@@ -1,0 +1,27 @@
+li
+{
+    list-style: none;
+}
+.navbar
+{
+    background-color: rgb(233, 136, 136);
+}
+.myContainer
+{
+    margin-bottom: 50px;
+    
+}
+body
+{
+    
+}
+
+.myContainer ul
+{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    
+
+}
+
